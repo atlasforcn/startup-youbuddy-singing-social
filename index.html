@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>友伴 - 銀髮族唱歌交友 App Demo</title>
+    <meta
+      name="description"
+      content="友伴是一個以唱歌房、Call-in、聊天室、安全互動與陪伴紀錄為核心的銀髮族社交 App demo。"
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="hero" id="top">
+      <nav class="topbar" aria-label="主要導覽">
+        <a class="brand-mark" href="#top" aria-label="回到友伴首頁">
+          <span class="brand-paw" aria-hidden="true">♣</span>
+          <span>
+            <strong>友伴</strong>
+            <small>銀髮唱歌交友</small>
+          </span>
+        </a>
+        <div class="nav-links">
+          <a href="#homeApp">首頁</a>
+          <a href="#rooms">唱歌房</a>
+          <a href="#songbook">點歌</a>
+          <a href="#companions">聊天</a>
+          <a href="#records">紀錄</a>
+        </div>
+      </nav>
+
+      <section class="hero-grid" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">參考官方介面設計方向重製</p>
+          <h1 id="hero-title">把直播歡唱、聊天陪伴，做成長輩一看就懂的手機 App。</h1>
+          <p class="hero-text">
+            米灰底、暖棕色導覽、圓角手機介面與大按鈕，讓銀髮族可以從當主播、當聽眾、聊天室或個人資料四個入口開始。
+          </p>
+          <div class="hero-actions">
+            <a class="primary-link" href="#homeApp">試用首頁入口</a>
+            <button class="soft-button" type="button" id="quickGreeting">送出今日問候</button>
+          </div>
+        </div>
+
+        <div class="phone home-phone" id="homeApp" aria-label="友伴 App 首頁預覽">
+          <div class="phone-speaker" aria-hidden="true"></div>
+          <div class="app-top simple">
+            <span class="paw-logo" aria-hidden="true">♣</span>
+            <strong>友伴</strong>
+          </div>
+          <div class="home-screen">
+            <p class="welcome-copy">歡迎回到友伴！<br>今天想唱什麼歌呢？</p>
+            <div class="entry-grid">
+              <button type="button" class="entry-button" data-entry="host">
+                <span aria-hidden="true">🎙</span>
+                當主播
+              </button>
+              <button type="button" class="entry-button" data-entry="listener">
+                <span aria-hidden="true">🎧</span>
+                當聽眾
+              </button>
+              <button type="button" class="entry-button" data-entry="chat">
+                <span aria-hidden="true">💬</span>
+                聊天室
+              </button>
+              <button type="button" class="entry-button" data-entry="profile">
+                <span aria-hidden="true">👤</span>
+                個人資料
+              </button>
+            </div>
+            <div class="home-banner">
+              <strong>今晚 8 點</strong>
+              <span>金曲唱歌房開唱</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="source-panel" aria-label="比賽來源">
+          <p class="panel-kicker">比賽來源</p>
+          <h2>大專校院創新創業實戰模擬學習平臺</h2>
+          <dl>
+            <div>
+              <dt>主辦資料</dt>
+              <dd>教育部，114 年，第一梯次成功案例</dd>
+            </div>
+            <div>
+              <dt>學校 / 團隊</dt>
+              <dd>國立成功大學 / 友伴</dd>
+            </div>
+            <div>
+              <dt>作品領域</dt>
+              <dd>友伴-銀髮族唱歌交友app，服務文創領域</dd>
+            </div>
+          </dl>
+          <a
+            class="official-link"
+            href="https://ssp.moe.gov.tw/cases/1441"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            開啟官方案例
+          </a>
+        </aside>
+      </section>
+    </header>
+
+    <main>
+      <section class="status-strip" aria-label="今日陪伴摘要">
+        <article>
+          <span class="stat-number" id="activeRoomCount">0</span>
+          <span class="stat-label">已加入唱歌房</span>
+        </article>
+        <article>
+          <span class="stat-number" id="greetingCount">0</span>
+          <span class="stat-label">今日問候</span>
+        </article>
+        <article>
+          <span class="stat-number" id="callCount">1</span>
+          <span class="stat-label">排定 Call-in</span>
+        </article>
+        <article>
+          <span class="stat-number" id="safeScore">安心</span>
+          <span class="stat-label">互動狀態</span>
+        </article>
+      </section>
+
+      <section class="section band-soft" id="rooms" aria-labelledby="rooms-title">
+        <div class="section-heading">
+          <p class="eyebrow">唱歌房</p>
+          <h2 id="rooms-title">像官方手機入口一樣，用三張大卡開始。</h2>
+          <p>
+            祝訊唱歌房、金曲唱歌房、閒聊房都保留大字與清楚動線，使用者可以篩選、加入、排唱或 Call-in。
+          </p>
+        </div>
+
+        <div class="filter-row" role="group" aria-label="唱歌房篩選">
+          <button class="filter-button is-active" type="button" data-filter="全部">全部</button>
+          <button class="filter-button" type="button" data-filter="祝訊">祝訊</button>
+          <button class="filter-button" type="button" data-filter="金曲">金曲</button>
+          <button class="filter-button" type="button" data-filter="閒聊">閒聊</button>
+          <button class="filter-button" type="button" data-filter="新手友善">新手友善</button>
+        </div>
+
+        <div class="room-layout">
+          <div class="room-list" id="roomList" aria-live="polite"></div>
+
+          <aside class="phone live-phone" aria-label="手機 karaoke 唱歌室">
+            <div class="phone-speaker" aria-hidden="true"></div>
+            <div class="app-top">
+              <button type="button" class="mini-button" aria-label="回到上頁">‹</button>
+              <div>
+                <span>唱歌室</span>
+                <strong id="currentRoomName">要歌</strong>
+              </div>
+              <button type="button" class="mini-button" aria-label="選單">☰</button>
+            </div>
+
+            <section class="singer-panel" aria-label="目前歌曲">
+              <div class="singer-avatar" aria-hidden="true">葉</div>
+              <div class="song-ticket">
+                <strong id="currentSongTitle">外婆的澎湖灣</strong>
+                <span id="currentSongSinger">潘安邦</span>
+              </div>
+            </section>
+
+            <p class="room-brief" id="currentRoomDetail">選一間唱歌房加入，這裡會顯示主持人、排唱狀態和歌詞。</p>
+
+            <div class="lyric-screen" aria-live="polite">
+              <span>來 仔 來 仔</span>
+              <strong id="lyricLine">晚風輕拂澎湖灣</strong>
+              <small id="lyricPronounce">wǎn fēng qīng fú péng hú wān</small>
+            </div>
+
+            <div class="queue-box">
+              <strong>排唱狀態</strong>
+              <p id="queueStatus">等待加入後顯示。</p>
+            </div>
+
+            <div class="karaoke-controls">
+              <button type="button" id="stopButton">■ 停止</button>
+              <button type="button" id="joinQueueButton">Ⅱ 暫停 / 排唱</button>
+            </div>
+
+            <div class="bottom-tools" aria-label="唱歌室工具列">
+              <button type="button" class="tool-button" data-tool="smile" aria-label="送出表情">🙂</button>
+              <button type="button" class="tool-button" data-tool="mic" aria-label="麥克風">🎙</button>
+              <button type="button" class="tool-button" data-tool="gift" aria-label="送禮物">🎁</button>
+              <button type="button" id="callInButton" aria-label="Call-in 問候">☎</button>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="songbook" aria-labelledby="songbook-title">
+        <div class="section-heading">
+          <p class="eyebrow">點歌</p>
+          <h2 id="songbook-title">搜尋框、歌曲清單、播放與點歌按鈕。</h2>
+          <p>
+            點歌頁參考官方更新頁的手機結構，讓歌曲封面、歌名、歌手與播放按鈕都更大、更容易看清楚。
+          </p>
+        </div>
+
+        <div class="songbook-layout">
+          <div class="phone song-phone" aria-label="點歌手機畫面">
+            <div class="phone-speaker" aria-hidden="true"></div>
+            <div class="app-top">
+              <button type="button" class="mini-button" aria-label="回到上頁">‹</button>
+              <strong>點歌</strong>
+              <button type="button" class="mini-button" aria-label="個人">●</button>
+            </div>
+
+            <label class="search-wrap" for="songSearch">
+              <span aria-hidden="true">⌕</span>
+              <input id="songSearch" type="search" placeholder="輸入歌手或歌名...">
+            </label>
+            <p class="recommend-label">推薦歌曲</p>
+            <div class="song-list" id="songList" aria-live="polite"></div>
+          </div>
+
+          <div class="song-actions-panel">
+            <h3>點歌後會同步更新唱歌室</h3>
+            <p>
+              選擇歌曲會把黑底歌詞、歌名與歌手更新到 Live room，也會寫入今日紀錄。
+            </p>
+            <button class="soft-button" type="button" id="demoSongButton">幫我點一首金曲</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band-warm" id="companions" aria-labelledby="companions-title">
+        <div class="section-heading">
+          <p class="eyebrow">聊天室與好友配對</p>
+          <h2 id="companions-title">頭像、對話泡泡、掌聲互動都更像官方聊天室。</h2>
+          <p>
+            配對仍保留共同歌單、可通話時間與互動界線；聊天室加入大掌聲與表情，讓陪伴感更直接。
+          </p>
+        </div>
+
+        <div class="chat-layout">
+          <div class="phone chat-phone" aria-label="聊天室手機畫面">
+            <div class="phone-speaker" aria-hidden="true"></div>
+            <div class="app-top">
+              <button type="button" class="mini-button" aria-label="回到上頁">‹</button>
+              <strong>閒聊房</strong>
+              <span class="member-count">456</span>
+            </div>
+
+            <div class="chat-window" id="chatWindow" aria-live="polite">
+              <p class="chat-placeholder">加入唱歌房後，聊天室會出現主持人的暖場提醒。</p>
+            </div>
+
+            <form class="chat-form" id="chatForm">
+              <label for="chatInput">我想說...</label>
+              <div class="input-line">
+                <input id="chatInput" name="chatInput" type="text" placeholder="例如：這首歌真好聽" autocomplete="off">
+                <button type="submit">送出</button>
+              </div>
+            </form>
+
+            <div class="reaction-row">
+              <button type="button" class="reaction-button" data-reaction="👏">👏 掌聲</button>
+              <button type="button" class="reaction-button" data-reaction="😊">😊 微笑</button>
+              <button type="button" class="reaction-button" data-reaction="🎁">🎁 禮物</button>
+            </div>
+          </div>
+
+          <div class="companion-grid" id="companionGrid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="section band-deep" id="safety" aria-labelledby="safety-title">
+        <div class="section-heading">
+          <p class="eyebrow">安全互動</p>
+          <h2 id="safety-title">介面簡單，但安全界線要清楚。</h2>
+          <p>
+            專為銀髮族設計的社交產品，需要讓每個使用者知道誰能聯絡我、什麼時候能 Call-in、必要時如何暫停。
+          </p>
+        </div>
+
+        <div class="safety-grid">
+          <form class="safety-card" id="safetyForm">
+            <label class="toggle-row">
+              <input type="checkbox" name="verifiedOnly" checked>
+              <span>
+                <strong>只接受已驗證熟齡會員</strong>
+                <small>加入房間與 Call-in 前先確認暱稱、社區與互動守則。</small>
+              </span>
+            </label>
+            <label class="toggle-row">
+              <input type="checkbox" name="textFirst" checked>
+              <span>
+                <strong>先文字問候，再語音通話</strong>
+                <small>雙方都按下同意後，才開啟 Call-in。</small>
+              </span>
+            </label>
+            <label class="toggle-row">
+              <input type="checkbox" name="familyNotice">
+              <span>
+                <strong>重要通話後通知關懷聯絡人</strong>
+                <small>只分享時間與安全狀態，不公開聊天內容。</small>
+              </span>
+            </label>
+
+            <label class="topic-label" for="safeTopic">今日安心話題</label>
+            <div class="input-line">
+              <input id="safeTopic" name="safeTopic" type="text" placeholder="例如：只聊唱歌與日常散步">
+              <button type="submit">更新</button>
+            </div>
+          </form>
+
+          <aside class="safety-summary" aria-live="polite">
+            <p class="panel-kicker">安心提醒</p>
+            <h3 id="safetySummaryTitle">目前是穩定安心模式</h3>
+            <ul id="safetyList">
+              <li>不顯示電話與住址。</li>
+              <li>Call-in 需要雙方確認。</li>
+              <li>房間主持人可協助暫停對話。</li>
+            </ul>
+            <button class="alert-button" type="button" id="pauseInteraction">暫停陌生互動 30 分鐘</button>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="records" aria-labelledby="records-title">
+        <div class="section-heading">
+          <p class="eyebrow">活動與通話紀錄</p>
+          <h2 id="records-title">看見陪伴真的有發生。</h2>
+          <p>
+            紀錄今天加入過的房間、送出的問候、點歌、排定的 Call-in 和安全設定變更，讓下一次互動更有延續感。
+          </p>
+        </div>
+
+        <div class="records-layout">
+          <form class="schedule-card" id="scheduleForm">
+            <h3>安排下一通 Call-in</h3>
+            <label for="scheduleBuddy">選擇好友</label>
+            <select id="scheduleBuddy" name="scheduleBuddy"></select>
+
+            <label for="scheduleTime">通話時段</label>
+            <select id="scheduleTime" name="scheduleTime">
+              <option value="今天 19:30">今天 19:30</option>
+              <option value="明天 10:00">明天 10:00</option>
+              <option value="週六 15:00">週六 15:00</option>
+            </select>
+
+            <label for="scheduleTopic">想聊的歌或主題</label>
+            <input id="scheduleTopic" name="scheduleTopic" type="text" value="練唱月亮代表我的心">
+
+            <button type="submit">加入陪伴行程</button>
+          </form>
+
+          <div class="timeline-wrap">
+            <div class="timeline-head">
+              <h3>今日紀錄</h3>
+              <button type="button" id="clearRecords">清空 demo 紀錄</button>
+            </div>
+            <ol class="timeline" id="recordTimeline" aria-live="polite"></ol>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Demo 依據官方案例資訊製作：教育部大專校院創新創業實戰模擬學習平臺，
+        <a href="https://ssp.moe.gov.tw/cases/1441" target="_blank" rel="noopener noreferrer">
+          友伴-銀髮族唱歌交友app
+        </a>
+        。
+      </p>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
