@@ -1,5 +1,21 @@
 # 友伴 - 銀髮族唱歌交友 App Demo
 
+## 快速看懂
+
+![startup-youbuddy-singing-social 功能截圖](docs/preview.png)
+
+- 線上 Demo：https://atlasforcn.github.io/startup-youbuddy-singing-social/
+- 這個原型在做什麼：把友伴做成銀髮族唱歌交友 App。
+- 特色定位：特色是參考官方公開介面方向，放大唱歌房、聊天室、點歌和安心互動流程。
+- 操作流程：選擇唱歌房或點歌內容 → 在聊天室送出暖心話或安排 Call-in → 用安全設定管理互動界線與陪伴紀錄
+
+<details>
+<summary>展開完整功能流程截圖</summary>
+
+![startup-youbuddy-singing-social 完整功能流程截圖](docs/flow.png)
+
+</details>
+
 這是一個原生 HTML/CSS/JavaScript 製作的互動 demo，根據教育部「大專校院創新創業實戰模擬學習平臺」成功案例資訊整理與延伸設計。
 
 本 demo 參考官方案例頁公開的介面設計方向，但不直接使用原團隊素材。
